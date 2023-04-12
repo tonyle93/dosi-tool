@@ -248,7 +248,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GetViOtpForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GET OTP";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -37,10 +37,12 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.Location = new System.Drawing.Point(149, 42);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(188, 23);
+            this.txtUsername.Size = new System.Drawing.Size(188, 25);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.Validated += new System.EventHandler(this.OnUsernameValidated);
             // 
             // label2
             // 
@@ -54,10 +56,13 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.Location = new System.Drawing.Point(148, 88);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(188, 23);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Size = new System.Drawing.Size(188, 25);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Validated += new System.EventHandler(this.OnPasswordValidated);
             // 
             // btnLogin
             // 
@@ -67,7 +72,7 @@
             this.btnLogin.Location = new System.Drawing.Point(158, 141);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(113, 38);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.OnLoginClicked);
