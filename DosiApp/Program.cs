@@ -17,7 +17,7 @@ namespace DosiApp
         static void Main()
         {
             DevExpress.UserSkins.BonusSkins.Register();
-            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Pumpkin);
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Summer2008);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());
