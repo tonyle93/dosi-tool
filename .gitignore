@@ -3,3 +3,6 @@
 ################################################################################
 
 /GetOtpApp/bin
+/GetOtpApp/obj
+/GetOtpApp/Properties
+/.vs
