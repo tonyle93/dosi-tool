@@ -8,10 +8,9 @@ namespace GetOtpApp
     {
         static HttpClient client = new HttpClient();
         static string baseUrl = "https://api.viotp.com";
-        static string defaultText = defaultText;
+        static string defaultText = "---";
         string token = "";
         string currentRequestId = "";
-        bool waitingCode = false;
         int timeOut = 30000;
         int currentTime = 0;
         List<ServiceData> services = new List<ServiceData>();
@@ -28,9 +27,9 @@ namespace GetOtpApp
 
         private void Init()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.btnPhoneCopy.Enabled = false;
             this.btnCodeCopy.Enabled = false;
-            this.waitingCode = false;
             this.token = this.txtApiKey.Text;
             this.txtBalance.Text = GetBalance().ToString();
             this.services = GetServices();
@@ -63,7 +62,6 @@ namespace GetOtpApp
             int serviceId = (int)this.cmbService.SelectedValue;
             this.lbStatus.Text = "PENDING";
             this.lbStatus.ForeColor = Color.Orange;
-            this.waitingCode = true;
             this.btnGetOtp.Enabled = false;
             this.txtPhone.Text = defaultText;
             this.txtCode.Text = defaultText;
@@ -81,7 +79,6 @@ namespace GetOtpApp
             {
                 this.lbStatus.Text = "ERROR";
                 this.lbStatus.ForeColor = Color.Red;
-                this.waitingCode = false;
                 this.btnGetOtp.Enabled = true;
             }
         }
@@ -95,7 +92,6 @@ namespace GetOtpApp
                 {
                     this.txtCode.Text = codeData.Code;
                     this.getCodeTimer.Enabled = false;
-                    this.waitingCode = false;
                     this.btnCodeCopy.Enabled = true;
                     this.btnGetOtp.Enabled = true;
                 }
@@ -103,7 +99,6 @@ namespace GetOtpApp
                 if(this.currentTime >= this.timeOut)
                 {
                     this.getCodeTimer.Enabled = false;
-                    this.waitingCode = false;
                     this.btnGetOtp.Enabled = true;
                     this.lbStatus.Text = "ERROR";
                     this.lbStatus.ForeColor = Color.Red;

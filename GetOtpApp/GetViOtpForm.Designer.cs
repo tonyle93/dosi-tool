@@ -245,7 +245,10 @@
             this.Controls.Add(this.btnGetOtp);
             this.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GetViOtpForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GET OTP";
             this.ResumeLayout(false);
             this.PerformLayout();
